@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <artifactId>xtee-client-lkfv6</artifactId>
   <name>Lkf V6 client services</name>
-  <version>4.2.1</version>
+  <version>4.2.2</version>
 
   <parent>
     <groupId>com.nortal.jroad</groupId>
