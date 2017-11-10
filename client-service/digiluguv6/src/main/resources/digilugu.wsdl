@@ -1541,12 +1541,12 @@
 					<element name="code" nillable="true" type="string"/>
 					<element name="validFrom" nillable="true" type="tns:timestamp14"/>
 					<element name="validUntil" nillable="true" type="tns:timestamp8"/>
-					<element maxOccurs="unbounded" name="restrictions" nillable="true" type="tns:restrictionsType"/>
+					<element name="restrictions" nillable="true" type="tns:restrictionsType"/>
 				</sequence>
 			</complexType>
 			<complexType name="restrictionsType">
 				<sequence>
-					<element name="restriction" nillable="false" type="tns:restrictionType"/>
+					<element maxOccurs="unbounded" name="restriction" nillable="false" type="tns:restrictionType"/>
 				</sequence>
 			</complexType>
 			<complexType name="restrictionType">
