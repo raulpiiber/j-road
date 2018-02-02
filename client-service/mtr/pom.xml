@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
     <artifactId>xtee-client-mtr</artifactId>
     <name>MTR client services</name>
-    <version>4.2.1</version>
+    <version>4.2.0</version>
 
     <parent>
         <groupId>com.nortal.jroad</groupId>
