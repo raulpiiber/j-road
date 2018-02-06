@@ -11,13 +11,6 @@
 
 	<bean id="digiluguXTeeV6ServiceImpl" class="com.nortal.jroad.client.digiluguv6.DigiluguV6ServiceImpl"/>
 
-	<bean id="digiluguv6XRoadConsumer" class="com.nortal.jroad.client.service.consumer.Digiluguv6XRoadConsumer"/>
-
-	<bean id="digiluguXRoadDatabase" class="com.nortal.jroad.client.digiluguv6.database.DigiluguXRoadDatabaseImpl">
-		<property name="xRoadConsumer">
-			<bean id="lkfv6XRoadConsumer" class="com.nortal.jroad.client.service.consumer.Digiluguv6XRoadConsumer">
-			</bean>
-		</property>
-	</bean>
+	<bean id="XRoadConsumer" class="com.nortal.jroad.client.service.consumer.StandardXRoadConsumer"/>
 
 </beans>
