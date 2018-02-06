@@ -1,21 +1,10 @@
 package com.nortal.jroad.client.rrv6;
 
 
-import com.nortal.jroad.client.rrv6.types.eu.x_road.rr.producer.RR441Document;
-import com.nortal.jroad.client.rrv6.types.eu.x_road.rr.producer.RR441RequestType;
-import com.nortal.jroad.client.rrv6.types.eu.x_road.rr.producer.RR442Document;
-import com.nortal.jroad.client.rrv6.types.eu.x_road.rr.producer.RR442RequestType;
-import com.nortal.jroad.client.rrv6.types.eu.x_road.rr.producer.RR442ResponseDocument;
-import com.nortal.jroad.client.rrv6.types.eu.x_road.rr.producer.RR50SurnudIsikuteLeidmineDocument;
-import com.nortal.jroad.client.rrv6.types.eu.x_road.rr.producer.RR50SurnudIsikuteLeidmineResponseDocument;
-import com.nortal.jroad.client.rrv6.types.eu.x_road.rr.producer.RRARKJUHILUBADocument;
-import com.nortal.jroad.client.rrv6.types.eu.x_road.rr.producer.RRARKJUHILUBAResponseDocument;
-import com.nortal.jroad.client.rrv6.types.eu.x_road.rr.producer.RRSIDEAADRESSSideDataDocument;
-import com.nortal.jroad.client.rrv6.types.eu.x_road.rr.producer.RRSIDEAADRESSSideDataResponseDocument;
+import com.nortal.jroad.client.exception.XRoadServiceConsumptionException;
+import com.nortal.jroad.client.rrv6.types.eu.x_road.rr.producer.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import com.nortal.jroad.client.exception.XRoadServiceConsumptionException;
 
 
 @Service("Rrv6XTeeServiceImpl")
@@ -68,4 +57,21 @@ public class RrV6XTeeServiceImpl implements RrV6XTeeService {
         paring.setRequest(rr442RequestType);
         return rrXRoadDatabase.rr442V3(paring, userId);
     }
+
+    public RR84IsikuSeosedResponseDocument.RR84IsikuSeosedResponse findIsikuSeosedV1(String isikukood) throws XRoadServiceConsumptionException {
+        RR84IsikuSeosedDocument.RR84IsikuSeosed paring = RR84IsikuSeosedDocument.RR84IsikuSeosed.Factory.newInstance();
+        RR84IsikuSeosedRequestType requestType = RR84IsikuSeosedRequestType.Factory.newInstance();
+        requestType.setIsikukood(isikukood);
+        paring.setRequest(requestType);
+        return rrXRoadDatabase.rr84IsikuSeosedV1(paring);
+    }
+
+    public RR84IsikuSeosedResponseDocument.RR84IsikuSeosedResponse findIsikuSeosedV1(String isikukood, String userIdCode) throws XRoadServiceConsumptionException {
+        RR84IsikuSeosedDocument.RR84IsikuSeosed paring = RR84IsikuSeosedDocument.RR84IsikuSeosed.Factory.newInstance();
+        RR84IsikuSeosedRequestType requestType = RR84IsikuSeosedRequestType.Factory.newInstance();
+        requestType.setIsikukood(isikukood);
+        paring.setRequest(requestType);
+        return rrXRoadDatabase.rr84IsikuSeosedV1(paring, userIdCode);
+    }
+
 }
